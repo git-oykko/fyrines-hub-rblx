@@ -89,7 +89,7 @@ if currentGame == "plane_crazy" then
     
                 task.wait(2)
     
-                selectPartButton.Label.Text = "Select part"
+                selectPartButton.Label.Text = "Selected part : "..targetPart.Name
             end
         else
             Library:Notify("Player died or part doesn't exist")
@@ -145,7 +145,7 @@ if currentGame == "plane_crazy" then
             del = v
         end
     })
-    
+
     PartTeleporter:AddToggle("SpamTp", {
         Text = "Spam Teleport",
         Default = false,
