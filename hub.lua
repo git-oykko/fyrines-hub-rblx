@@ -1,3 +1,29 @@
+local function len(t)
+    local count = 0
+
+    for _,v in pairs(t) do
+        count = count + 1
+    end
+end
+
+local supportedGames = {
+    plane_crazy = 166986752,
+    doors = 6516141723,
+    zombie_uprising = 4972091010
+}
+
+local matchesLeft = len(supportedGames)
+local currentGame
+
+for i,v in pairs(supportedGames) do
+    if matchesLeft == 0 then
+        
+    end
+
+    if game.PlaceId ~= v then
+        matchesLeft = matchesLeft - 1
+    end
+end
 local lib = 'https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/'
 
 local Library = loadstring(game:HttpGet(lib .. 'Library.lua'))()
@@ -16,14 +42,10 @@ local Tabs = {
     ['UI Settings'] = hubWindow:AddTab('UI Settings'),
 }
 
-local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('Menu')
+lib.ToggleKeybind = Options.MenuKeybind
 
-MenuGroup:AddButton('Unload', function() Library:Unload() end)
-
-Library.ToggleKeybind = Options.MenuKeybind
-
-ThemeManager:SetLibrary(Library)
-SaveManager:SetLibrary(Library)
+ThemeManager:SetLibrary(lib)
+SaveManager:SetLibrary(lib)
 
 SaveManager:IgnoreThemeSettings()
 
