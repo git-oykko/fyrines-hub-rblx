@@ -75,7 +75,8 @@ if currentGame == "plane_crazy" then
     PartTeleporter:AddButton("SelectPartButton",{
         Text = "Select part",
         Tooltip = "Select the part",
-        Callback = function()
+        DoubleClick = false,
+        Func = function()
             game.Players.LocalPlayer:GetMouse().Button1Down:Once(function()
                 targetPart = game.Players.LocalPlayer:GetMouse().Target
             end)
