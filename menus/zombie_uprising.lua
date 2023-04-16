@@ -11,8 +11,8 @@ AimCheats:AddLabel('Keybind'):AddKeyPicker('Hold to aim', {
     Text = 'Aim',
     NoUI = false,
 
-    Callback = function(Value)
-        print('[cb] Keybind clicked!', Value)
+    Callback = function(v)
+
     end,
 })
 
