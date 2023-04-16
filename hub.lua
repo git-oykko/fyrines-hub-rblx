@@ -35,6 +35,8 @@ for i,v in pairs(supportedGames) do
     end
 end
 
+lib:Notify("welcome to da hub!", 2)
+
 local hubWindow = Library:CreateWindow({
     Title = "fyrine's hub",
     Center = true,
@@ -48,6 +50,8 @@ local Tabs = {
 }
 
 Options.ColorPicker:SetValueRGB(Color3.fromRGB(0, 255, 140))
+
+local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('Menu')
 
 ThemeManager:SetLibrary(lib)
 SaveManager:SetLibrary(lib)
