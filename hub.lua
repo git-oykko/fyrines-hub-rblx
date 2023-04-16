@@ -66,8 +66,6 @@ if currentGame == "plane_crazy" then
         Tooltip = "Players",
 
         Callback = function(value)
-            print(value)
-
             targetPlr = value
         end
     })
