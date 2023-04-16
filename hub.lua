@@ -59,6 +59,7 @@ Tabs = {
 if currentGame == "plane_crazy" then
     Library:Notify("Loading the menu", 2)
     local menu = loadstring(game:HttpGet("https://raw.githubusercontent.com/git-oykko/fyrines-hub-rblx/main/menus/plane_crazy.lua"))()
+    Library:Notify("Loaded!", 2)
 end
 
 local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('Menu')
