@@ -47,6 +47,8 @@ local Tabs = {
     ['UI Settings'] = hubWindow:AddTab('UI Settings'),
 }
 
+Options.ColorPicker:SetValueRGB(Color3.fromRGB(0, 255, 140))
+
 ThemeManager:SetLibrary(lib)
 SaveManager:SetLibrary(lib)
 
