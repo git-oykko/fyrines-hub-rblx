@@ -54,11 +54,14 @@ Tabs = {
     ['UI Settings'] = hubWindow:AddTab('UI Settings'),
 }
 
--- plane_crazy
-
+-- make the horrible code look better and optimize this code up if possible tmmrw
 if currentGame == "plane_crazy" then
     Library:Notify("Loading the menu", 2)
-    local menu = loadstring(game:HttpGet("https://raw.githubusercontent.com/git-oykko/fyrines-hub-rblx/main/menus/plane_crazy.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/git-oykko/fyrines-hub-rblx/main/menus/plane_crazy.lua"))()
+    Library:Notify("Loaded!", 2)
+elseif currentGame == "zombie_uprising" then
+    Library:Notify("Loading the menu", 2)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/git-oykko/fyrines-hub-rblx/main/menus/zombie_uprising.lua"))()
     Library:Notify("Loaded!", 2)
 end
 
