@@ -27,6 +27,7 @@ local SaveManager = loadstring(game:HttpGet(uiRepo .. 'addons/SaveManager.lua'))
 for i,v in pairs(supportedGames) do
     if matchesLeft == 0 then
         Library:Notify("this game isn't supported", 2)
+        print("hub is unloading")
         Library:Unload()
 
         return
