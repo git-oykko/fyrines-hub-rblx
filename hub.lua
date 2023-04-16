@@ -62,7 +62,7 @@ if currentGame == "plane_crazy" then
 
     PartTeleporter:AddDropdown("SelectPlayerDropdown", {
         SpecialType = "Player",
-        Text = "Select the player to teleport the part to",
+        Text = "Select the player",
         Tooltip = "Players",
 
         Callback = function(value)
