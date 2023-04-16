@@ -1,4 +1,4 @@
-local AimCheats = Tabs.Game:AddLeftGroupbox("Aimbot, ESP and tracers")
+local AimCheats = Tabs.Game:AddLeftGroupbox("Aim")
 
 AimCheats:AddDivider()
 
@@ -16,7 +16,7 @@ AimCheats:AddLabel('Keybind'):AddKeyPicker('Hold to aim', {
     end,
 })
 
-AimCheats:AddToggle({
+AimCheats:AddToggle("Aimbot", {
     Text = "Aimbot",
     Default = false,
     Tooltip = "",
@@ -26,7 +26,7 @@ AimCheats:AddToggle({
     end
 })
 
-AimCheats:AddToggle({
+AimCheats:AddToggle("ESP", {
     Text = "ESP",
     Default = false,
     Tooltip = "",
@@ -36,7 +36,7 @@ AimCheats:AddToggle({
     end
 })
 
-AimCheats:AddToggle({
+AimCheats:AddToggle("Tracers", {
     Text = "Tracers",
     Default = false,
     Tooltip = "",
