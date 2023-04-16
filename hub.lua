@@ -18,16 +18,16 @@ local matchesLeft = len(supportedGames)
 local currentGame
 
 print(matchesLeft)
-local lib = 'https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/'
+local uiRepo = 'https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/'
 
-local Library = loadstring(game:HttpGet(lib .. 'Library.lua'))()
-local ThemeManager = loadstring(game:HttpGet(lib .. 'addons/ThemeManager.lua'))()
-local SaveManager = loadstring(game:HttpGet(lib .. 'addons/SaveManager.lua'))()
+local Library = loadstring(game:HttpGet(uiRepo .. 'Library.lua'))()
+local ThemeManager = loadstring(game:HttpGet(uiRepo .. 'addons/ThemeManager.lua'))()
+local SaveManager = loadstring(game:HttpGet(uiRepo .. 'addons/SaveManager.lua'))()
 
 for i,v in pairs(supportedGames) do
     if matchesLeft == 0 then
-        lib:Notify("this game isn't supported", 2)
-        lib:Unload()
+        Library:Notify("this game isn't supported", 2)
+        Library:Unload()
     end
 
     if game.PlaceId ~= v then
@@ -35,7 +35,7 @@ for i,v in pairs(supportedGames) do
     end
 end
 
-lib:Notify("welcome to da hub!", 2)
+Library:Notify("welcome to the hub", 2)
 
 local hubWindow = Library:CreateWindow({
     Title = "fyrine's hub",
@@ -54,10 +54,12 @@ Options.ColorPicker:SetValueRGB(Color3.fromRGB(0, 255, 140))
 local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('Menu')
 
 MenuGroup:AddButton('Unload', function() Library:Unload() end)
-MenuGroup:AddLabel('Menu bind'):AddKeyPicker('MenuKeybind', { Default = 'RightShift', NoUI = true, Text = 'Menu keybind' })
+MenuGroup:AddLabel('Menu bind'):AddKeyPicker('MenuKeybind', { Default = 'RightShift', NoUI = false, Text = 'Menu keybind' })
 
-ThemeManager:SetLibrary(lib)
-SaveManager:SetLibrary(lib)
+Library.ToggleKeybind = Options.MenuKeybind
+
+ThemeManager:SetLibrary(Library)
+SaveManager:SetLibrary(Library)
 
 SaveManager:IgnoreThemeSettings()
 
