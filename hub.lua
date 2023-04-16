@@ -60,7 +60,7 @@ if currentGame == "plane_crazy" then
 
     local targetPlr
 
-    PartTeleporter:AddDropDown("SelectPlayerDropdown", {
+    PartTeleporter:AddDropdown("SelectPlayerDropdown", {
         SpecialType = "Player",
         Text = "Select the player to teleport the part to",
         Tooltip = "Players",
