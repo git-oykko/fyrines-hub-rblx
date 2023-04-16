@@ -40,6 +40,7 @@ for i,v in pairs(supportedGames) do
 end
 
 Library:Notify("welcome to the hub, "..game.Players.LocalPlayer.DisplayName.." (@"..game.Players.LocalPlayer.Name..")", 2)
+Library:Notify("press right shift to open the menu", 2)
 
 local hubWindow = Library:CreateWindow({
     Title = "fyrine's hub",
@@ -60,29 +61,61 @@ if currentGame == "plane_crazy" then
 
     local targetPlr
 
+    PartTeleporter:AddDivider()
+
+
     PartTeleporter:AddDropdown("SelectPlayerDropdown", {
         SpecialType = "Player",
         Text = "Select the player",
-        Tooltip = "Players",
+        Tooltip = "select the player",
 
         Callback = function(value)
             targetPlr = value
-        end
+        end,
     })
 
     local targetPart
 
     local selectPartButton
 
+    local function tp()
+        if targetPart and workspace[targetPlr]:FindFirstChild("HumanoidRootPart") then
+            if not targetPart.Anchored then
+                targetPart.Anchored = true -- hehe it looks like a pp
+                targetPart.Position = workspace[targetPlr].HumanoidRootPart.Position
+                targetPart.Anchored = false
+            else
+                selectPartButton.Label.Text = "Part's anchored"
+    
+                task.wait(2)
+    
+                selectPartButton.Label.Text = "Select part"
+            end
+        else
+            Library:Notify("Player died or part doesn't exist")
+        end
+    end
+
+    PartTeleporter:AddDivider()
+
     selectPartButton = PartTeleporter:AddButton({
         Text = "Select part",
         Tooltip = "Select the part",
         DoubleClick = false,
         Func = function()
-            selectPartButton.Text = "Click on a part"
+            selectPartButton.Label.Text = "Click on a part"
             game.Players.LocalPlayer:GetMouse().Button1Down:Once(function()
                 targetPart = game.Players.LocalPlayer:GetMouse().Target
-                selectPartButton.Text = "Selected part = "..targetPart.Name
+
+                if targetPart then
+                    selectPartButton.Label.Text = "Selected part : "..targetPart.Name
+                else
+                    selectPartButton.Label.Text = "Part's anchored"
+
+                    task.wait(2)
+
+                    selectPartButton.Label.Text = "Selected part : "..targetPart.Name
+                end
             end)
         end
     })
@@ -91,10 +124,46 @@ if currentGame == "plane_crazy" then
         Text = "Teleport part",
         Tooltip = "Teleports the part to the selected player",
         DoubleClick = false,
-        Func = function()
-            print(targetPlr, targetPart)
+        Func = tp
+    })
+
+    getgenv().SpamTp = false
+
+    local del
+
+    PartTeleporter:AddInput("DelayBox", {
+        Default = "",
+        Numeric = true,
+        Finished = true,
+    
+        Text = 'Delay',
+        Tooltip = '0.025 is recommended',
+    
+        Placeholder = 'sec(s)',
+
+        Callback = function(v)
+            del = v
         end
     })
+    
+    PartTeleporter:AddToggle("SpamTp", {
+        Text = "Spam Teleport",
+        Default = false,
+        Tooltip = "Spams teleport with a selected delay",
+
+        Callback = function(v)
+            getgenv().SpamTp = v
+
+            task.spawn(function()
+                repeat
+                    if not del then return end
+                    task.wait(del)
+                    tp()
+                until getgenv().SpamTp == false
+            end)
+        end
+    })
+
 end
 
 local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('Menu')
