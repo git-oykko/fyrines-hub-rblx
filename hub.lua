@@ -31,7 +31,7 @@ for i,v in pairs(supportedGames) do
     end
 
     if matchesLeft == 0 then
-        Library:Notify("this game isn't supported (self-destruct initiated", 2)
+        Library:Notify("this game isn't supported (self-destruct initiated)", 2)
         task.wait(2.5)
         Library:Unload()
 
