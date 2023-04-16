@@ -17,6 +17,8 @@ local supportedGames = {
 local matchesLeft = len(supportedGames)
 local currentGame
 
+print(matchesLeft)
+
 for i,v in pairs(supportedGames) do
     if matchesLeft == 0 then
         
@@ -51,8 +53,8 @@ SaveManager:IgnoreThemeSettings()
 
 SaveManager:SetIgnoreIndexes({ 'MenuKeybind' })
 
-ThemeManager:SetFolder('MyScriptHub')
-SaveManager:SetFolder('MyScriptHub/specific-game')
+ThemeManager:SetFolder('fyrinesHub')
+SaveManager:SetFolder('fyrinesHub/save')
 
 SaveManager:BuildConfigSection(Tabs['UI Settings'])
 
