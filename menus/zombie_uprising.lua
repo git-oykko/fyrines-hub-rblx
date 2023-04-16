@@ -2,7 +2,7 @@ local AimCheats = Tabs.Game:AddLeftGroupbox("Aim")
 
 AimCheats:AddDivider()
 
-AimCheats:AddLabel('Keybind'):AddKeyPicker('Hold to aim', {
+AimCheats:AddLabel('Aimbot Keybind'):AddKeyPicker('HoldAim', {
     Default = 'E',
     SyncToggleState = false,
 
@@ -19,7 +19,7 @@ AimCheats:AddLabel('Keybind'):AddKeyPicker('Hold to aim', {
 AimCheats:AddToggle("Aimbot", {
     Text = "Aimbot",
     Default = false,
-    Tooltip = "",
+    Tooltip = "Tracers",
 
     Callback = function(v)
         
