@@ -72,14 +72,27 @@ if currentGame == "plane_crazy" then
 
     local targetPart
 
-    PartTeleporter:AddButton({
+    local selectPartButton
+
+    selectPartButton = PartTeleporter:AddButton({
         Text = "Select part",
         Tooltip = "Select the part",
         DoubleClick = false,
         Func = function()
+            selectPartButton.Text = "Click on a part"
             game.Players.LocalPlayer:GetMouse().Button1Down:Once(function()
                 targetPart = game.Players.LocalPlayer:GetMouse().Target
+                selectPartButton.Text = "Selected part = "..targetPart.Name
             end)
+        end
+    })
+
+    PartTeleporter:AddButton({
+        Text = "Teleport part",
+        Tooltip = "Teleports the part to the selected player",
+        DoubleClick = false,
+        Func = function()
+            print(targetPlr, targetPart)
         end
     })
 end
