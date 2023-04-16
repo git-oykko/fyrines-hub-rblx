@@ -56,7 +56,7 @@ local Tabs = {
 -- plane_crazy
 
 if currentGame == "plane_crazy" then
-    local PartTeleporter = Tabs.Game:AddLeftGroupbox("Groupbox")
+    local PartTeleporter = Tabs.Game:AddLeftGroupbox("Part Teleporter")
 
     local targetPlr
 
