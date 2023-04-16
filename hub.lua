@@ -63,6 +63,10 @@ if currentGame == "plane_crazy" then
         Tabs,
         Library
     })
+
+    Library:Notify("Loading the menu", 2)
+    
+    menu()
 end
 
 local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('Menu')
