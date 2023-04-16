@@ -7,5 +7,10 @@ local SaveManager = loadstring(game:HttpGet(lib .. 'addons/SaveManager.lua'))()
 local hubWindow = Library:CreateWindow({
     Title = "fyrine's hub",
     Center = true,
-    Autoshow = false,
+    Autoshow = true,
 })
+
+local Tabs = {
+    Game = hubWindow:AddTab("Game"),
+    ['UI Settings'] = hubWindow:AddTab('UI Settings'),
+}
