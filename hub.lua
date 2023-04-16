@@ -17,7 +17,6 @@ local supportedGames = {
 local matchesLeft = len(supportedGames)
 local currentGame
 
-print(matchesLeft)
 local uiRepo = 'https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/'
 
 local Library = loadstring(game:HttpGet(uiRepo .. 'Library.lua'))()
@@ -25,20 +24,22 @@ local ThemeManager = loadstring(game:HttpGet(uiRepo .. 'addons/ThemeManager.lua'
 local SaveManager = loadstring(game:HttpGet(uiRepo .. 'addons/SaveManager.lua'))()
 
 for i,v in pairs(supportedGames) do
+    if game.PlaceId ~= v then
+        matchesLeft = matchesLeft - 1
+    else
+        currentGame = i
+    end
+
     if matchesLeft == 0 then
         Library:Notify("this game isn't supported", 2)
-        print("hub is unloading")
+        task.wait(2.5)
         Library:Unload()
 
         return
     end
-
-    if game.PlaceId ~= v then
-        matchesLeft = matchesLeft - 1
-    end
 end
 
-Library:Notify("welcome to the hub", 2)
+Library:Notify("welcome to the hub, "..game.Players.LocalPlayer.DisplayName.." (@"..game.Players.LocalPlayer.Name..")", 2)
 
 local hubWindow = Library:CreateWindow({
     Title = "fyrine's hub",
@@ -48,16 +49,46 @@ local hubWindow = Library:CreateWindow({
 })
 
 local Tabs = {
-    Game = hubWindow:AddTab("Game"),
+    Game = hubWindow:AddTab(currentGame),
     ['UI Settings'] = hubWindow:AddTab('UI Settings'),
 }
 
-Options.ColorPicker:SetValueRGB(Color3.fromRGB(0, 255, 140))
+-- plane_crazy
+
+if currentGame == "plane_crazy" then
+    local PartTeleporter = Tabs.Game:AddLeftGroupbox("Groupbox")
+
+    local targetPlr
+
+    PartTeleporter:AddDropDown("SelectPlayerDropdown", {
+        SpecialType = "Player",
+        Text = "Select the player to teleport the part to",
+        Tooltip = "Players",
+
+        Callback = function(value)
+            print(value)
+
+            targetPlr = value
+        end
+    })
+
+    local targetPart
+
+    PartTeleporter:AddButton("SelectPartButton",{
+        Text = "Select part",
+        Tooltip = "Select the part to teleport to the player",
+        Func = function()
+            game.Players.LocalPlayer:GetMouse().Button1Down:Once(function()
+                targetPart = game.Players.LocalPlayer:GetMouse().Target
+            end)
+        end
+    })
+end
 
 local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('Menu')
 
 MenuGroup:AddButton('Unload', function() Library:Unload() end)
-MenuGroup:AddLabel('Menu bind'):AddKeyPicker('MenuKeybind', { Default = 'End', NoUI = false, Text = 'Menu keybind' })
+MenuGroup:AddLabel('Menu bind'):AddKeyPicker('MenuKeybind', { Default = 'RightShift', NoUI = false, Text = 'Menu keybind' })
 
 Library.ToggleKeybind = Options.MenuKeybind
 
