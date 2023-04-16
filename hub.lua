@@ -42,6 +42,10 @@ local Tabs = {
     ['UI Settings'] = hubWindow:AddTab('UI Settings'),
 }
 
+lib.ToggleKeybind = Options.MenuKeybind
+
+print(Options.MenuKeybind)
+
 ThemeManager:SetLibrary(lib)
 SaveManager:SetLibrary(lib)
 
