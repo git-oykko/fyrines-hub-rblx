@@ -4,6 +4,8 @@ local function len(t)
     for _,v in pairs(t) do
         count = count + 1
     end
+
+    return count
 end
 
 local supportedGames = {
@@ -41,10 +43,6 @@ local Tabs = {
     Game = hubWindow:AddTab("Game"),
     ['UI Settings'] = hubWindow:AddTab('UI Settings'),
 }
-
-lib.ToggleKeybind = Options.MenuKeybind
-
-print(Options.MenuKeybind)
 
 ThemeManager:SetLibrary(lib)
 SaveManager:SetLibrary(lib)
