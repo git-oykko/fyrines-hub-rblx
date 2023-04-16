@@ -72,7 +72,7 @@ if currentGame == "plane_crazy" then
 
     local targetPart
 
-    PartTeleporter:AddButton("SelectPartButton",{
+    PartTeleporter:AddButton({
         Text = "Select part",
         Tooltip = "Select the part",
         DoubleClick = false,
