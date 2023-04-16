@@ -20,19 +20,20 @@ local currentGame
 print(matchesLeft)
 local lib = 'https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/'
 
+local Library = loadstring(game:HttpGet(lib .. 'Library.lua'))()
+local ThemeManager = loadstring(game:HttpGet(lib .. 'addons/ThemeManager.lua'))()
+local SaveManager = loadstring(game:HttpGet(lib .. 'addons/SaveManager.lua'))()
+
 for i,v in pairs(supportedGames) do
     if matchesLeft == 0 then
         lib:Notify("this game isn't supported", 2)
+        lib:Unload()
     end
 
     if game.PlaceId ~= v then
         matchesLeft = matchesLeft - 1
     end
 end
-
-local Library = loadstring(game:HttpGet(lib .. 'Library.lua'))()
-local ThemeManager = loadstring(game:HttpGet(lib .. 'addons/ThemeManager.lua'))()
-local SaveManager = loadstring(game:HttpGet(lib .. 'addons/SaveManager.lua'))()
 
 local hubWindow = Library:CreateWindow({
     Title = "fyrine's hub",
