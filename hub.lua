@@ -19,7 +19,7 @@ local currentGame
 
 local uiRepo = 'https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/'
 
-local Library = loadstring(game:HttpGet(uiRepo .. 'Library.lua'))()
+Library = loadstring(game:HttpGet(uiRepo .. 'Library.lua'))()
 local ThemeManager = loadstring(game:HttpGet(uiRepo .. 'addons/ThemeManager.lua'))()
 local SaveManager = loadstring(game:HttpGet(uiRepo .. 'addons/SaveManager.lua'))()
 
@@ -49,7 +49,7 @@ local hubWindow = Library:CreateWindow({
     TabPadding = 8
 })
 
-local Tabs = {
+Tabs = {
     Game = hubWindow:AddTab(currentGame),
     ['UI Settings'] = hubWindow:AddTab('UI Settings'),
 }
@@ -57,16 +57,8 @@ local Tabs = {
 -- plane_crazy
 
 if currentGame == "plane_crazy" then
-    local menu = loadstring(game:HttpGet("https://raw.githubusercontent.com/git-oykko/fyrines-hub-rblx/main/menus/plane_crazy.lua"))
-
-    setfenv(menu, {
-        Tabs,
-        Library
-    })
-
     Library:Notify("Loading the menu", 2)
-    
-    menu()
+    local menu = loadstring(game:HttpGet("https://raw.githubusercontent.com/git-oykko/fyrines-hub-rblx/main/menus/plane_crazy.lua"))()
 end
 
 local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('Menu')
