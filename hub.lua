@@ -28,6 +28,8 @@ for i,v in pairs(supportedGames) do
     if matchesLeft == 0 then
         Library:Notify("this game isn't supported", 2)
         Library:Unload()
+
+        return
     end
 
     if game.PlaceId ~= v then
