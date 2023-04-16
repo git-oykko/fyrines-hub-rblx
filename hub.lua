@@ -8,6 +8,7 @@ local hubWindow = Library:CreateWindow({
     Title = "fyrine's hub",
     Center = true,
     Autoshow = true,
+    TabPadding = 8
 })
 
 local Tabs = {
