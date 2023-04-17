@@ -176,7 +176,7 @@ GunCheats:AddDropdown("InventoryDropdown", {
     end
 })
 
-GunCheats:AddInput({
+GunCheats:AddInput("RPMBox", {
     Default = "1000",
     Numeric = true,
     Finished = true,
