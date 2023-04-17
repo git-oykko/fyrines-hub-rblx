@@ -109,15 +109,60 @@ ESPCheats:AddToggle("ZombieESP", {
     end
 })
 
-ESPCheats:AddToggle("VendingESP", {
-    Text = "Vending Machine ESP",
+local PerkMachines = game.Workspace.Map.PerkMachines
+
+ESPCheats:AddToggle("PerkESP", {
+    Text = "Perk Machine ESP",
     Default = false,
     Tooltip = "",
 
     Callback = function(v)
         getgenv().VendingESP = v
+
+        task.spawn(function()
+            repeat
+                task.wait()
+
+                for i,v in pairs(PerkMachines:GetChildren()) do
+                    if not v:FindFirstChild("Highlight") then
+                        local esp = Instance.new("Highlight")
+    
+                        esp.Parent = v
+                        esp.Adornee = v
+
+                        local colors = {
+                            ["Bloxilicious Gum"] =  Color3.fromRGB(75, 151, 75),
+                            ["Bloxy Cola"] = Color3.fromRGB(124, 92, 70),
+                            ["Goala Cola"] = Color3.fromRGB(51, 88, 130),
+                            ["Juggerblox"] = Color3.fromRGB(124, 92, 70),
+                            ["Witches Brew"] = Color3.fromRGB(75, 151, 75),
+                            ["Quick Revive"] = Color3.fromRGB(255, 255, 255)
+                        }
+
+                        for _, color in pairs(colors) do
+                            if v.Name == _ then
+                                esp.FillColor = color
+                                esp.OutlineColor = color
+                            end
+                        end
+
+                        esp.FillTransparency = 0.75
+                        esp.OutlineTransparency = 0.5
+                    end
+                end
+            until getgenv().VendingESP == false
+
+            
+            for i,v in pairs(PerkMachines:GetChildren()) do
+                if v:FindFirstChild("Highlight") then
+                    v.Highlight:Destroy()
+                end
+            end
+        end)
     end
 })
+
+local Turrets = game.Workspace.Map.Turrets
 
 ESPCheats:AddToggle("TurretESP", {
     Text = "Turret ESP",
@@ -126,6 +171,34 @@ ESPCheats:AddToggle("TurretESP", {
 
     Callback = function()
         getgenv().TurretESP = v
+
+        task.spawn(function()
+            repeat
+                task.wait()
+
+                for i,v in pairs(Turrets:GetChildren()) do
+                    if not v:FindFirstChild("Highlight") then
+                        local esp = Instance.new("Highlight")
+    
+                        esp.Parent = v
+                        esp.Adornee = v
+
+                        esp.FillColor = Color3.fromRGB(75, 151, 75)
+                        esp.OutlineColor = Color3.fromRGB(75, 151, 75)
+
+                        esp.FillTransparency = 0.75
+                        esp.OutlineTransparency = 0.5
+                    end
+                end
+            until getgenv().TurretESP == false
+
+            
+            for i,v in pairs(Turrets:GetChildren()) do
+                if v:FindFirstChild("Highlight") then
+                    v.Highlight:Destroy()
+                end
+            end
+        end)
     end
 })
 
