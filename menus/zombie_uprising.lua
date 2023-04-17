@@ -27,8 +27,10 @@ AimCheats:AddLabel('Aimbot Keybind'):AddKeyPicker('ToggleAim', {
                 local cam = game.Workspace.CurrentCamera
                 local target = game.Players.LocalPlayer:GetMouse().Target
 
-                if target.Parent.Parent.Name == "Zombies" then
-                    cam.CFrame = CFrame.lookAt(cam.CFrame.Position, target.Parent[AimPart].Position)
+                if target then
+                    if target.Parent.Parent.Name == "Zombies" then
+                        cam.CFrame = CFrame.lookAt(cam.CFrame.Position, target.Parent[AimPart].Position)
+                    end
                 end
             until getgenv().Aim == false or getgenv().Aimbot == false
         end)
@@ -208,9 +210,7 @@ AutoCheats:AddDivider()
 
 AutoCheats:AddDropdown("PowerUpDropdown", {
     Values = {
-        "Insta Kill",
-        "Defender",
-        "2x Damage"
+        "Coming soon!"
     },
 
     Default = 1,
@@ -222,12 +222,23 @@ AutoCheats:AddDropdown("PowerUpDropdown", {
     end
 })
 
+local powerups = game.Workspace.Ignore.PowerUps
+local originalCFrame = CFrame.new(0, 0, 0)
+
 AutoCheats:AddButton({
     Text = "Collect all powerups",
     Tooltip = "",
 
     Func = function()
-        
+        originalCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+
+        for i,v in pairs(powerups:GetChildren()) do
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+        end
+
+        if #powerups:GetChildren() == 0 then
+            Library:Notify("No powerups right now", 2)
+        end
     end
 })
 
