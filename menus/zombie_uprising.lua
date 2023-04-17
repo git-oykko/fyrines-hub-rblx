@@ -192,8 +192,8 @@ ESPCheats:AddToggle("TurretESP", {
                         esp.FillColor = Color3.fromRGB(75, 151, 75)
                         esp.OutlineColor = Color3.fromRGB(75, 151, 75)
 
-                        esp.FillTransparency = 0.75
-                        esp.OutlineTransparency = 0.5
+                        esp.FillTransparency = 0.5
+                        esp.OutlineTransparency = 0.25
                     end
                 end
             until getgenv().TurretESP == false
