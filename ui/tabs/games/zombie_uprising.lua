@@ -1,5 +1,5 @@
 local Tab = mainWindow:AddTab("zombie_uprising")
-
+print(MiscTab)
 local AimCheats = Tab.Game:AddLeftGroupbox("Aim")
 
 AimCheats:AddDivider()
