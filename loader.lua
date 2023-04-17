@@ -67,12 +67,11 @@ elseif currentGame == "zombie_uprising" then
     Library:Notify("Loaded!", 2)
 end
 
-Misc:AddLeftGroupbox("nothing yet")
+local misc = Tabs.Misc:AddLeftGroupbox("nothing yet")
+local credits = Tabs.Credits:AddLeftGroupbox("Credits")
 
-local Groupbox = Credits:AddLeftGroupbox("Credits")
-
-Groupbox:AddLabel("scripted by oykko https://github.com/git-oykko/fyrines-hub-rblx")
-Groupbox:AddLabel("uses Linoria Lib for ui https://github.com/violin-suzutsuki/LinoriaLib")
+credits:AddLabel("scripted by oykko https://github.com/git-oykko/fyrines-hub-rblx")
+credits:AddLabel("uses Linoria Lib for ui https://github.com/violin-suzutsuki/LinoriaLib")
 
 local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('Menu')
 
