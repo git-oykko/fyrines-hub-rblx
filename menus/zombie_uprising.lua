@@ -98,3 +98,96 @@ ESPCheats:AddToggle("TurretESP", {
         getgenv().TurretESP = v
     end
 })
+
+local AutoCheats = Tabs.Game:AddLeftGroupbox("Auto")
+
+AutoCheats:AddDivider()
+
+AutoCheats:AddButton({
+    Text = "Collect all powerups",
+    Tooltip = "",
+
+    Func = function()
+        
+    end
+})
+
+AutoCheats:AddDropdown("PowerUpDropdown", {
+    Values = {
+        "Insta Kill",
+        "Defender",
+        "2x Damage"
+    },
+
+    Default = 1,
+    Text = "Select Power Up",
+    Tooltip = "",
+
+    Callback = function(v)
+        print("PowerUpDropdown : "..v)
+    end
+})
+
+AutoCheats:AddButton({
+    Text = "Board everything",
+    Tooltip = "",
+
+    Func = function()
+        
+    end
+})
+
+AutoCheats:AddButton({
+    Text = "Weapon machine",
+    Tooltip = "",
+    
+    Func = function()
+
+    end
+})
+
+AutoCheats:AddDropdown("WeaponDropdown", {
+    Values = {
+        "Nothing yet",
+    },
+
+    Default = 1,
+    Text = "Select weapon",
+    Tooltip = "",
+
+    Callback = function(v)
+        print("WeaponDropdown : "..v)
+    end
+})
+
+local GunCheats = Tabs.Game:AddRightGroupbox("Gun Mods")
+
+GunCheats:AddDropdown("InventoryDropdown", {
+    Values = {
+        "It only modifies the weapon you hold for now",
+    },
+
+    Default = 1,
+    Text = "Select weapon",
+    Tooltip = "",
+
+    Callback = function(v)
+        print("InventoryDropdown : "..v)
+    end
+})
+
+GunCheats:AddInput({
+    Default = "1000",
+    Numeric = true,
+    Finished = true,
+
+    Text = "RPM",
+    Tooltip = "Changes the RPM of the weapon",
+
+    Placeholder = "RPM",
+
+    Callback = function(v)
+        print("RPM : "..tostring(v))
+    end
+})
+
