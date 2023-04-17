@@ -2,17 +2,16 @@ local AimCheats = Tabs.Game:AddLeftGroupbox("Basic")
 
 AimCheats:AddDivider()
 
-AimCheats:AddLabel('Aimbot Keybind'):AddKeyPicker('HoldAim', {
+AimCheats:AddLabel('Aimbot Keybind'):AddKeyPicker('ToggleAim', {
     Default = 'E',
     SyncToggleState = false,
 
-    Mode = 'Hold',
+    Mode = 'Toggle',
 
     Text = 'Aim',
     NoUI = false,
 
     Callback = function(v)
-        print(v)
         getgenv().Aim = v
         
         task.spawn(function()
@@ -46,7 +45,22 @@ AimCheats:AddToggle("ESP", {
     Tooltip = "",
 
     Callback = function(v)
-        
+        local zombies = game.Workspace.Zombies
+
+        if v then
+            for i,v in pairs(zombies) do
+                local box = Instance.new("Highlight")
+            
+                box.Parent = zombies
+                box.Adornee = v
+            end
+        else
+            for i,v in pairs(zombies) do
+                if v:IsA("Highlight") then
+                    v:Destroy()
+                end
+            end
+        end
     end
 })
 
