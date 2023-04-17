@@ -150,8 +150,8 @@ ESPCheats:AddToggle("PerkESP", {
                             end
                         end
 
-                        esp.FillTransparency = 0.75
-                        esp.OutlineTransparency = 0.5
+                        esp.FillTransparency = 0.5
+                        esp.OutlineTransparency = 0.25
                     end
                 end
             until getgenv().VendingESP == false
