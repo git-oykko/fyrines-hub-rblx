@@ -69,6 +69,7 @@ local ESPCheats = Tabs.Game:AddLeftGroupbox("ESP")
 
 ESPCheats:AddDivider()
 
+local Zombies = game.Workspace.Zombies
 ESPCheats:AddToggle("ZombieESP", {
     Text = "Zombie ESP",
     Default = false,
@@ -76,6 +77,28 @@ ESPCheats:AddToggle("ZombieESP", {
 
     Callback = function(v)
         getgenv().ZombieESP = v
+
+        task.spawn(function()
+            repeat
+                task.wait()
+
+                for i,v in pairs(Zombies:GetChildren()) do
+                    if not v:FindFirstChild("Highlight") then
+                        local esp = Instance.new("Highlight")
+    
+                        esp.Parent = v
+                        esp.Adornee = v
+                    end
+                end
+            until getgenv().ZombieESP == false
+
+            
+            for i,v in pairs(Zombies:GetChildren()) do
+                if v:FindFirstChild("Highlight") then
+                    v.Highlight:Destroy()
+                end
+            end
+        end)
     end
 })
 
