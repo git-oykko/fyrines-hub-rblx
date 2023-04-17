@@ -27,3 +27,5 @@ SaveManager:BuildConfigSection(Tabs['UI Settings'])
 ThemeManager:ApplyToTab(Tabs['UI Settings'])
 
 SaveManager:LoadAutoloadConfig()
+
+Library:Notify("Loaded settings tab", 2)
