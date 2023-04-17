@@ -48,7 +48,7 @@ AimCheats:AddToggle("ESP", {
         local zombies = game.Workspace.Zombies
 
         if v then
-            for i,v in pairs(zombies) do
+            for i,v in pairs(zombies:GetChildren()) do
                 local box = Instance.new("Highlight")
             
                 box.Parent = zombies
