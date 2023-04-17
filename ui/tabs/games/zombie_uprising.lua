@@ -1,8 +1,4 @@
-local name = "zombie_uprising"
-
-Tabs[name] = mainWindow:AddTab(name)
-
-local Tab = Tabs[name]
+local Tab = mainWindow:AddTab("zombie_uprising")
 
 local AimCheats = Tab.Game:AddLeftGroupbox("Aim")
 

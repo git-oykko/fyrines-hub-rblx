@@ -1,8 +1,4 @@
-local name = "Credits"
-
-Tabs[name] = mainWindow:AddTab(name)
-
-local CreditsTab = Tabs[name]
+local CreditsTab = mainWindow:AddTab("Credits")
 
 local CreditsLeftGroupbox = CreditsTab:AddLeftGroupbox("Credits")
 

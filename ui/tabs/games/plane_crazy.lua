@@ -1,6 +1,4 @@
-Tabs['plane_crazy'] = mainWindow:AddTab('plane_crazy')
-
-local Tab = Tabs["plane_crazy"]
+local Tab = mainWindow:AddTab('plane_crazy')
 
 local PartTeleporter = Tab:AddLeftGroupbox("Part Teleporter")
 

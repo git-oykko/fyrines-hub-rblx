@@ -1,8 +1,4 @@
-local name = "wtrb"
-
-Tabs[name] = mainWindow:AddTab(name)
-
-local Tab = Tabs[name]
+local Tab = mainWindow:AddTab("wtrb")
 
 local PartTeleporter = Tab:AddLeftGroupbox("Part Teleporter")
 

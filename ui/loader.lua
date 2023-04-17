@@ -48,8 +48,6 @@ mainWindow = Library:CreateWindow({
     TabPadding = 8
 })
 
-Tabs = {}
-
 ui = "https://raw.githubusercontent.com/git-oykko/fyrines-hub-rblx/main/ui/"
 tabs = ui.."tabs/"
 
