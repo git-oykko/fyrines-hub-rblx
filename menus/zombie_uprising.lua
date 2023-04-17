@@ -6,7 +6,7 @@ AimCheats:AddLabel('Aimbot Keybind'):AddKeyPicker('HoldAim', {
     Default = 'E',
     SyncToggleState = false,
 
-    Mode = 'Hold',
+    Mode = 'Toggle',
 
     Text = 'Aim',
     NoUI = false,
