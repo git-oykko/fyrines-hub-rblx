@@ -107,6 +107,8 @@ ESPCheats:AddToggle("ZombieESP", {
                     v.Highlight:Destroy()
                 end
             end
+
+            return
         end)
     end
 })
@@ -160,6 +162,8 @@ ESPCheats:AddToggle("PerkESP", {
                     v.Highlight:Destroy()
                 end
             end
+
+            return
         end)
     end
 })
@@ -200,6 +204,8 @@ ESPCheats:AddToggle("TurretESP", {
                     v.Highlight:Destroy()
                 end
             end
+
+            return
         end)
     end
 })
