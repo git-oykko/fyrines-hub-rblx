@@ -23,6 +23,7 @@ AimCheats:AddLabel('Aimbot Keybind'):AddKeyPicker('HoldAim', {
 
                 if target.Parent.Parent.Name == "Zombies" then
                     cam.CFrame = CFrame.lookAt(cam.CFrame.Position, target.Parent.Head.Position)
+                    print("Trying to aim")
                 end
             until getgenv().Aim == false or getgenv().Aimbot == false
         end)
