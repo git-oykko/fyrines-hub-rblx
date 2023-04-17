@@ -21,7 +21,7 @@ AimCheats:AddLabel('Aimbot Keybind'):AddKeyPicker('HoldAim', {
                 local cam = game.Workspace.CurrentCamera
                 local target = game.Players.LocalPlayer:GetMouse().Target
 
-                if game.Players:GetPlayerFromCharacter(target.Parent) then
+                if target.Parent.Parent.Name == Zombies then
                     cam.CFrame = CFrame.lookAt(cam.CFrame.Position, target.Head.Position)
                 end
             until getgenv().Aim == false or getgev().Aimbot == false
