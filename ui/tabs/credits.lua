@@ -1,4 +1,5 @@
 local CreditsTab = mainWindow:AddTab("Credits")
+print(MiscTab)
 
 local CreditsLeftGroupbox = CreditsTab:AddLeftGroupbox("Credits")
 
