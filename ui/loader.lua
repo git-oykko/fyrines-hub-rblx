@@ -61,5 +61,6 @@ tabs = "https://raw.githubusercontent.com/git-oykko/fyrines-hub-rblx/main/ui/tab
 loadstring(game:HttpGet(tabs.."games/"..currentGame..".lua"))()
 
 -- loads other tabs
-loadstring(game:HttpGet(tabs.."credits.lua"))
-loadstring(game:HttpGet(tabs.."misc.lua"))
+loadstring(game:HttpGet(tabs.."credits.lua"))()
+loadstring(game:HttpGet(tabs.."misc.lua"))()
+loadstring(game:HttpGet(tabs.."settings.lua"))
