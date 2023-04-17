@@ -1,7 +1,5 @@
 local AimCheats = Tabs.Game:AddLeftTabbox("Basic")
 
-AimCheats:AddDivider()
-
 local AimPart = "Head"
 
 AimCheats:AddLabel('Aimbot Keybind'):AddKeyPicker('ToggleAim', {
