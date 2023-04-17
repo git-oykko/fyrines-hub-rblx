@@ -212,9 +212,15 @@ local AutoCheats = Tabs.Game:AddLeftGroupbox("Auto")
 
 AutoCheats:AddDivider()
 
+local powerSelect = "All"
+
 AutoCheats:AddDropdown("PowerUpDropdown", {
     Values = {
-        "Coming soon!"
+        "All",
+        "Insta Kill",
+        "Max Ammo",
+        "Silver Bullet",
+        "Defender"
     },
 
     Default = 1,
@@ -222,7 +228,7 @@ AutoCheats:AddDropdown("PowerUpDropdown", {
     Tooltip = "",
 
     Callback = function(v)
-        print("PowerUpDropdown : "..v)
+        powerSelect = v
     end
 })
 
@@ -230,14 +236,20 @@ local powerups = game.Workspace.Ignore.PowerUps
 local originalCFrame = CFrame.new(0, 0, 0)
 
 AutoCheats:AddButton({
-    Text = "Collect all powerups",
+    Text = "Collect powerup(s)",
     Tooltip = "",
 
     Func = function()
         originalCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 
         for i,v in pairs(powerups:GetChildren()) do
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+            if powerSelect == "All" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+            else
+                if v.Name == powerSelect then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+                end
+            end
         end
 
         if #powerups:GetChildren() == 0 then
