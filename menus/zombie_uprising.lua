@@ -1,4 +1,4 @@
-local AimCheats = Tabs.Game:AddLeftGroupbox("Basic")
+local AimCheats = Tabs.Game:AddLeftGroupbox("Aim")
 
 AimCheats:AddDivider()
 
@@ -62,5 +62,39 @@ AimCheats:AddDropdown("AimPart", {
 
     Callback = function(v)
         AimPart = v
+    end
+})
+
+local ESPCheats = Tabs.Game:AddLeftGroupbox("ESP")
+
+ESPCheats:AddDivider()
+
+ESPCheats:AddToggle("ZombieESP", {
+    Text = "Zombie ESP",
+    Default = false,
+    Tooltip = "",
+
+    Callback = function(v)
+        getgenv().ZombieESP = v
+    end
+})
+
+ESPCheats:AddToggle("VendingESP", {
+    Text = "Vending Machine ESP",
+    Default = false,
+    Tooltip = "",
+
+    Callback = function(v)
+        getgenv().VendingESP = v
+    end
+})
+
+ESPCheats:AddToggle("TurretESP", {
+    Text = "Turret ESP",
+    Default = false,
+    Tooltip = "",
+
+    Callback = function()
+        getgenv().TurretESP = v
     end
 })
