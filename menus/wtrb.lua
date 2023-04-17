@@ -53,6 +53,9 @@ selectPartButton = PartTeleporter:AddButton({
                     if v.Name == "Spikes" then
                         selectPartButton.Label.Text = "Selected part : "..v.Name
                         targetPart = v
+                    elseif v.Name == "Seat" then
+                        selectPartButton.Label.Text = "Selected part : "..v.Name
+                        targetPart = v
                     end
                 end
             else
