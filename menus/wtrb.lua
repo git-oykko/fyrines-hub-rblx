@@ -112,3 +112,31 @@ PartTeleporter:AddToggle("SpamTp", {
         end)
     end
 })
+
+PartTeleporter:AddDivider()
+
+local isViewing = false
+
+PartTeleporter:AddButton({
+    Text = "View player",
+    Tooltip = "Views the player selected",
+    DoubleClick = false,
+
+    Func = function()
+        isViewing = not isViewing
+
+        if isViewing then
+            if game.Workspace.CurrentCamera then
+                if game.Workspace[targetPlr] then
+                    game.Workspace.CurrentCamera.CameraSubject = game.Workspace[targetPlr].Humanoid
+                end
+            end
+        else
+            if game.Workspace.CurrentCamera then
+                if game.Players.LocalPlayer.Character then
+                    game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+                end
+            end
+        end
+    end
+})
