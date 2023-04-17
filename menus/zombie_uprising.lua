@@ -89,6 +89,12 @@ ESPCheats:AddToggle("ZombieESP", {
     
                         esp.Parent = v
                         esp.Adornee = v
+
+                        esp.FillColor = Color3.fromRGB(255, 0, 0)
+                        esp.OutlineColor = Color3.fromRGB(255, 0, 0)
+
+                        esp.FillTransparency = 0.75
+                        esp.OutlineTransparency = 0.5
                     end
                 end
             until getgenv().ZombieESP == false
