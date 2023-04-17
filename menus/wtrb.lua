@@ -49,7 +49,7 @@ selectPartButton = PartTeleporter:AddButton({
             targetPart = game.Players.LocalPlayer:GetMouse().Target
 
             if targetPart then
-                for i,v in pairs(targetPart.Parent) do
+                for i,v in pairs(targetPart.Parent:GetChildren()) do
                     if v.Name == "Spikes" then
                         selectPartButton.Label.Text = "Selected part : "..v.Name
                         targetPart = v
