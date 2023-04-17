@@ -70,6 +70,7 @@ local ESPCheats = Tabs.Game:AddLeftGroupbox("ESP")
 ESPCheats:AddDivider()
 
 local Zombies = game.Workspace.Zombies
+
 ESPCheats:AddToggle("ZombieESP", {
     Text = "Zombie ESP",
     Default = false,
