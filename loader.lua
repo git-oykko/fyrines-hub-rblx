@@ -11,7 +11,8 @@ end
 local supportedGames = {
     plane_crazy = 166986752,
     doors = 6516141723,
-    zombie_uprising = 4972091010
+    zombie_uprising = 4972091010,
+    wtrb = 2897155393
 }
 
 local matchesLeft = len(supportedGames)
@@ -64,6 +65,10 @@ if currentGame == "plane_crazy" then
 elseif currentGame == "zombie_uprising" then
     Library:Notify("Loading the menu", 2)
     loadstring(game:HttpGet("https://raw.githubusercontent.com/git-oykko/fyrines-hub-rblx/main/menus/zombie_uprising.lua"))()
+    Library:Notify("Loaded!", 2)
+elseif currentGame == "wtrb" then
+    Library:Notify("Loading the menu", 2)
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/git-oykko/fyrines-hub-rblx/main/menus/wtrb.lua"))()
     Library:Notify("Loaded!", 2)
 end
 
