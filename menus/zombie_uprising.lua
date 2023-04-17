@@ -1,4 +1,6 @@
-local AimCheats = Tabs.Game:AddLeftTabbox("Basic")
+local AimCheats = Tabs.Game:AddLeftGroupbox("Basic")
+
+AimCheats:AddDivider()
 
 local AimPart = "Head"
 
