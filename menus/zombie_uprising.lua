@@ -13,6 +13,7 @@ AimCheats:AddLabel('Aimbot Keybind'):AddKeyPicker('HoldAim', {
 
     Callback = function(v)
         getgenv().Aim = v
+        print("test 2")
 
         task.spawn(function()
             repeat
