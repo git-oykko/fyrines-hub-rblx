@@ -133,10 +133,10 @@ ESPCheats:AddToggle("PerkESP", {
                         esp.Adornee = v
 
                         local colors = {
-                            ["Bloxilicious Gum"] =  Color3.fromRGB(75, 151, 75),
+                            ["Bloxilicious Gum"] =  Color3.fromRGB(173, 141, 5),
                             ["Bloxy Cola"] = Color3.fromRGB(124, 92, 70),
                             ["Goala Cola"] = Color3.fromRGB(51, 88, 130),
-                            ["Juggerblox"] = Color3.fromRGB(124, 92, 70),
+                            ["Juggerblox"] = Color3.fromRGB(119, 16, 10),
                             ["Witches Brew"] = Color3.fromRGB(75, 151, 75),
                             ["Quick Revive"] = Color3.fromRGB(255, 255, 255)
                         }
