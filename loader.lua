@@ -51,6 +51,8 @@ local hubWindow = Library:CreateWindow({
 
 Tabs = {
     Game = hubWindow:AddTab(currentGame),
+    Misc = hubWindow:AddTab("Misc"),
+    Credits = hubWindow:AddTab("Credits"),
     ['UI Settings'] = hubWindow:AddTab('UI Settings'),
 }
 
@@ -64,6 +66,13 @@ elseif currentGame == "zombie_uprising" then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/git-oykko/fyrines-hub-rblx/main/menus/zombie_uprising.lua"))()
     Library:Notify("Loaded!", 2)
 end
+
+Misc:AddLeftGroupbox("nothing yet")
+
+local Groupbox = Credits:AddLeftGroupbox("Credits")
+
+Groupbox:AddLabel("scripted by oykko https://github.com/git-oykko/fyrines-hub-rblx")
+Groupbox:AddLabel("uses Linoria Lib for ui https://github.com/violin-suzutsuki/LinoriaLib")
 
 local MenuGroup = Tabs['UI Settings']:AddLeftGroupbox('Menu')
 
