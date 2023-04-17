@@ -107,8 +107,6 @@ ESPCheats:AddToggle("ZombieESP", {
                     v.Highlight:Destroy()
                 end
             end
-
-            return
         end)
     end
 })
