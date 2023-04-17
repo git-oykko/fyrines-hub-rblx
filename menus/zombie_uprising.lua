@@ -13,7 +13,20 @@ AimCheats:AddLabel('Aimbot Keybind'):AddKeyPicker('HoldAim', {
 
     Callback = function(v)
         getgenv().Aim = v
-        print("test 2")
+        
+        task.spawn(function()
+            repeat
+                task.wait()
+                print("why wont this fucking run dude")
+
+                local cam = game.Workspace.CurrentCamera
+                local target = game.Players.LocalPlayer:GetMouse().Target
+
+                if target.Parent.Parent.Name == "Zombies" then
+                    cam.CFrame = CFrame.lookAt(cam.CFrame.Position, target.Head.Position)
+                end
+            until getgenv().Aim == false or getgev().Aimbot == false
+        end)
     end
 })
 
