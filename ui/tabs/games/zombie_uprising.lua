@@ -1,4 +1,10 @@
-local AimCheats = Tabs.Game:AddLeftGroupbox("Aim")
+local name = "zombie_uprising"
+
+Tabs[name] = mainWindow:AddTab(name)
+
+local Tab = Tabs[name]
+
+local AimCheats = Tab.Game:AddLeftGroupbox("Aim")
 
 AimCheats:AddDivider()
 
@@ -67,7 +73,7 @@ AimCheats:AddDropdown("AimPart", {
     end
 })
 
-local ESPCheats = Tabs.Game:AddLeftGroupbox("ESP")
+local ESPCheats = Tab:AddLeftGroupbox("ESP")
 
 ESPCheats:AddDivider()
 
@@ -208,7 +214,7 @@ ESPCheats:AddToggle("TurretESP", {
     end
 })
 
-local AutoCheats = Tabs.Game:AddLeftGroupbox("Auto")
+local AutoCheats = Tab:AddLeftGroupbox("Auto")
 
 AutoCheats:AddDivider()
 
@@ -290,7 +296,7 @@ AutoCheats:AddButton({
     end
 })
 
-local GunCheats = Tabs.Game:AddRightGroupbox("Gun Mods")
+local GunCheats = Tab:AddRightGroupbox("Gun Mods")
 
 GunCheats:AddDivider()
 
@@ -323,7 +329,7 @@ GunCheats:AddInput("RPMBox", {
     end
 })
 
-local playerCheats = Tabs.Game:AddRightGroupbox("LocalPlayer")
+local playerCheats = Tab:AddRightGroupbox("LocalPlayer")
 
 playerCheats:AddDivider()
 

@@ -1,9 +1,12 @@
-local PartTeleporter = Tabs.Game:AddLeftGroupbox("Part Teleporter")
+Tabs['plane_crazy'] = mainWindow:AddTab('plane_crazy')
+
+local Tab = Tabs["plane_crazy"]
+
+local PartTeleporter = Tab:AddLeftGroupbox("Part Teleporter")
 
 local targetPlr
 
 PartTeleporter:AddDivider()
-
 
 PartTeleporter:AddDropdown("SelectPlayerDropdown", {
     SpecialType = "Player",

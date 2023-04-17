@@ -1,4 +1,10 @@
-local PartTeleporter = Tabs.Game:AddLeftGroupbox("Part Teleporter")
+local name = "wtrb"
+
+Tabs[name] = mainWindow:AddTab(name)
+
+local Tab = Tabs[name]
+
+local PartTeleporter = Tab:AddLeftGroupbox("Part Teleporter")
 
 local targetPlr
 
