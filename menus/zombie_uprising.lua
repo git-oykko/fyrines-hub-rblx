@@ -17,6 +17,7 @@ AimCheats:AddLabel('Aimbot Keybind'):AddKeyPicker('HoldAim', {
         task.spawn(function()
             repeat
                 task.wait()
+                print("Is this urnning?")
 
                 local cam = game.Workspace.CurrentCamera
                 local target = game.Players.LocalPlayer:GetMouse().Target
@@ -36,6 +37,7 @@ AimCheats:AddToggle("Aimbot", {
 
     Callback = function(v)
         getgenv().Aimbot = v
+        print("aimbot : "..v)
     end
 })
 
