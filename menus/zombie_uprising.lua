@@ -18,7 +18,7 @@ AimCheats:AddLabel('Aimbot Keybind'):AddKeyPicker('HoldAim', {
         task.spawn(function()
             repeat
                 task.wait()
-                print("Is this urnning?")
+                print("why wont this fucking run dude")
 
                 local cam = game.Workspace.CurrentCamera
                 local target = game.Players.LocalPlayer:GetMouse().Target
