@@ -324,7 +324,7 @@ playerCheats:AddSlider("SpeedSlider", {
     Compact = false,
 
     Callback = function(v)
-        print("SpeedSlider : "..v)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = math.floor(v)
     end
 })
 
@@ -337,6 +337,6 @@ playerCheats:AddSlider("JumpSlider", {
     Compact = false,
 
     Callback = function(v)
-        print("JumpSlider : "..v)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = math.floor(v)
     end
 })
