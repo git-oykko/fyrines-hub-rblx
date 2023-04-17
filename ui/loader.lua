@@ -53,7 +53,7 @@ Tabs = {
 }
 
 ui = "https://raw.githubusercontent.com/git-oykko/fyrines-hub-rblx/main/ui/"
-tabs = "https://raw.githubusercontent.com/git-oykko/fyrines-hub-rblx/main/ui/tabs/"
+tabs = ui.."tabs/"
 
 -- loads the selected game tab
 loadstring(game:HttpGet(tabs.."games/"..currentGame..".lua"))()
