@@ -49,7 +49,7 @@ mainWindow = Library:CreateWindow({
 })
 
 Tabs = {
-    Game = mainWindow:AddTab(currentGame),
+    Game = mainWindow:AddTab(currentGame)
 }
 
 ui = "https://raw.githubusercontent.com/git-oykko/fyrines-hub-rblx/main/ui/"
