@@ -12,6 +12,7 @@ AimCheats:AddLabel('Aimbot Keybind'):AddKeyPicker('HoldAim', {
     NoUI = false,
 
     Callback = function(v)
+        print(v)
         getgenv().Aim = v
         
         task.spawn(function()
