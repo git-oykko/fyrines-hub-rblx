@@ -38,7 +38,7 @@ AimCheats:AddToggle("Aimbot", {
 
     Callback = function(v)
         getgenv().Aimbot = v
-        print("aimbot : "..v)
+        print("aimbot : "..tostring(v))
     end
 })
 
