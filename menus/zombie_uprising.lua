@@ -12,7 +12,20 @@ AimCheats:AddLabel('Aimbot Keybind'):AddKeyPicker('HoldAim', {
     NoUI = false,
 
     Callback = function(v)
-        print(v)
+        getgenv().Aim = v
+
+        task.spawn(function()
+            repeat
+                task.wait()
+
+                local cam = game.Workspace.CurrentCamera
+                local target = game.Players.LocalPlayer:GetMouse().Target
+
+                if game.Players:GetPlayerFromCharacter(target.Parent) then
+                    cam.CFrame = CFrame.lookAt(cam.CFrame.Position, target.Head.Position)
+                end
+            until getgenv().Aim == false or getgev().Aimbot == false
+        end)
     end,
 })
 
@@ -22,7 +35,7 @@ AimCheats:AddToggle("Aimbot", {
     Tooltip = "Tracers",
 
     Callback = function(v)
-        
+        getgenv().Aimbot = v
     end
 })
 
