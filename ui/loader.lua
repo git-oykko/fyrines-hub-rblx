@@ -52,8 +52,6 @@ Tabs = {
     Game = mainWindow:AddTab(currentGame),
 }
 
-table.
-
 ui = "https://raw.githubusercontent.com/git-oykko/fyrines-hub-rblx/main/ui/"
 tabs = "https://raw.githubusercontent.com/git-oykko/fyrines-hub-rblx/main/ui/tabs/"
 
