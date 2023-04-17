@@ -103,15 +103,6 @@ local AutoCheats = Tabs.Game:AddLeftGroupbox("Auto")
 
 AutoCheats:AddDivider()
 
-AutoCheats:AddButton({
-    Text = "Collect all powerups",
-    Tooltip = "",
-
-    Func = function()
-        
-    end
-})
-
 AutoCheats:AddDropdown("PowerUpDropdown", {
     Values = {
         "Insta Kill",
@@ -129,7 +120,7 @@ AutoCheats:AddDropdown("PowerUpDropdown", {
 })
 
 AutoCheats:AddButton({
-    Text = "Board everything",
+    Text = "Collect all powerups",
     Tooltip = "",
 
     Func = function()
@@ -138,11 +129,11 @@ AutoCheats:AddButton({
 })
 
 AutoCheats:AddButton({
-    Text = "Weapon machine",
+    Text = "Board everything",
     Tooltip = "",
-    
-    Func = function()
 
+    Func = function()
+        
     end
 })
 
@@ -160,11 +151,22 @@ AutoCheats:AddDropdown("WeaponDropdown", {
     end
 })
 
+AutoCheats:AddButton({
+    Text = "Weapon machine",
+    Tooltip = "",
+    
+    Func = function()
+
+    end
+})
+
 local GunCheats = Tabs.Game:AddRightGroupbox("Gun Mods")
+
+GunCheats:AddDivider()
 
 GunCheats:AddDropdown("InventoryDropdown", {
     Values = {
-        "It only modifies the weapon you hold for now",
+        "Modifies the weapon on hand",
     },
 
     Default = 1,
@@ -191,3 +193,32 @@ GunCheats:AddInput("RPMBox", {
     end
 })
 
+local playerCheats = Tabs.Game:AddRightGroupbox("LocalPlayer")
+
+playerCheats:AddDivider()
+
+playerCheats:AddSlider("SpeedSlider", {
+    Text = "Speed",
+    Default = 16,
+    Min = 0,
+    Max = 100,
+    Rounding = 1,
+    Compact = false,
+
+    Callback = function(v)
+        print("SpeedSlider : "..v)
+    end
+})
+
+playerCheats:AddSlider("JumpSlider", {
+    Text = "Jump",
+    Default = 50,
+    Min = 0,
+    Max = 150,
+    Rounding = 1,
+    Compact = false,
+
+    Callback = function(v)
+        print("JumpSlider : "..v)
+    end
+})
