@@ -4,8 +4,8 @@ uiLibRepo = 'https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/
 Library = loadstring(game:HttpGet(uiLibRepo .. 'Library.lua'))()
 
 
-ui = "https://raw.githubusercontent.com/git-oykko/fyrines-hub-rblx/main/ui/"
-tabs = ui.."tabs/"
+local tab = "https://raw.githubusercontent.com/git-oykko/fyrines-hub-rblx/main/tabs/"
+local games = tab.."games/"
 
 
 local mainWindow = Library:CreateWindow({
@@ -73,7 +73,7 @@ Library:Notify("welcome to the hub, "..game.Players.LocalPlayer.DisplayName.." (
 Library:Notify("press right control to open the menu", 2)
 
 -- loads the selected game tab
-loadstring(game:HttpGet(tabs.."games/"..currentGame..".lua"))()
+loadstring(game:HttpGet(games..currentGame..".lua"))()
 
 -- loads other tabs
 loadstring(game:HttpGet(tabs.."credits.lua"))()
