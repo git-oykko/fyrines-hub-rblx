@@ -38,7 +38,8 @@ local currentGame
 -- Checks if the game is supported
 for i,v in pairs(supportedGames) do
     if game.GameId ~= v then
-        if v == 1709832923 then
+        if game.GameId == 1709832923 then
+            print("test")
             currentGame = "zombie_uprising"
 
             break
