@@ -27,7 +27,7 @@ AimCheats:AddLabel('Aimbot Keybind'):AddKeyPicker('ToggleAim', {
                 task.wait()
 
                 local cam = game.Workspace.CurrentCamera
-                local target
+                local target = game.Players.LocalPlayer:GetMouse().Target
 
                 if target then
                     if target.Parent.Parent.Name == "Zombies" then
