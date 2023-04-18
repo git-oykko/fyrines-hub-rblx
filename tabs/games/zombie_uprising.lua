@@ -27,7 +27,7 @@ AimCheats:AddLabel('Aimbot Keybind'):AddKeyPicker('ToggleAim', {
                 task.wait()
 
                 local cam = game.Workspace.CurrentCamera
-                local target = game.Players.LocalPlayer:GetMouse().Target
+                local target
 
                 if target then
                     if target.Parent.Parent.Name == "Zombies" then
@@ -66,6 +66,22 @@ AimCheats:AddDropdown("AimPart", {
 
     Callback = function(v)
         AimPart = v
+    end
+})
+
+AimCheats:AddDropdown("AimMethod", {
+    Values = {
+        "1st Person",
+        "3rd person"
+    },
+
+    Default = 1,
+
+    Text = "Choose aim method",
+    Tooltip = "",
+
+    Callback = function(v)
+        getgenv().aimMethod = v
     end
 })
 
