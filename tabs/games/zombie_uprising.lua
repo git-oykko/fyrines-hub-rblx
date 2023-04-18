@@ -204,7 +204,7 @@ ESPCheats:AddToggle("TurretESP", {
                     v.Highlight:Destroy()
                 end
             end
-
+            
             return
         end)
     end
