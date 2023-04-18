@@ -37,7 +37,7 @@ local currentGame
 
 -- Checks if the game is supported
 for i,v in pairs(supportedGames) do
-    if game.PlaceId ~= v then
+    if game.GameId ~= v then
         matchesLeft = matchesLeft - 1
     else
         currentGame = i
