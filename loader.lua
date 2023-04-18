@@ -37,10 +37,18 @@ local currentGame
 
 -- Checks if the game is supported
 for i,v in pairs(supportedGames) do
-    if game.GameId ~= v then
-        matchesLeft = matchesLeft - 1
+    if game.PlaceId ~= v then
+        if v == 1709832923 then
+            currentGame = "zombie_uprising"
+
+            break
+        else
+            matchesLeft = matchesLeft - 1
+        end
     else
         currentGame = i
+
+        break
     end
 
     if matchesLeft == 0 then
