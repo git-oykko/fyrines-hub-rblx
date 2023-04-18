@@ -1,0 +1,17 @@
+{
+    "robloxLsp.diagnostics.globals": [
+        "gameTab",
+        "uiLibRepo",
+        "Library",
+        "ui",
+        "tabs",
+        "len",
+
+        "gameTab",
+        "miscTab",
+        "creditsTab",
+        "getgenv",
+        "Tabs",
+        "Options"
+    ]
+}

@@ -1,1 +1,0 @@
-local Tab = mainWindow:AddTab("template")

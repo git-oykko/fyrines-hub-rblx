@@ -1,6 +1,5 @@
-local Tab = mainWindow:AddTab("zombie_uprising")
-print(mainWindow)
-print(Tab)
+local Tab = gameTab
+
 local AimCheats = Tab.Game:AddLeftGroupbox("Aim")
 
 AimCheats:AddDivider()
@@ -176,7 +175,7 @@ ESPCheats:AddToggle("TurretESP", {
     Default = false,
     Tooltip = "",
 
-    Callback = function()
+    Callback = function(v)
         getgenv().TurretESP = v
 
         task.spawn(function()

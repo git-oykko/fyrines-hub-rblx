@@ -1,4 +1,4 @@
-local Tab = mainWindow:AddTab('plane_crazy')
+local Tab = gameTab
 
 local PartTeleporter = Tab:AddLeftGroupbox("Part Teleporter")
 

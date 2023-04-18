@@ -1,7 +1,3 @@
-Tabs = {}
-
-Tabs['UI Settings'] = mainWindow:AddTab('UI Settings')
-
 local ThemeManager = loadstring(game:HttpGet(uiLibRepo .. 'addons/ThemeManager.lua'))()
 local SaveManager = loadstring(game:HttpGet(uiLibRepo .. 'addons/SaveManager.lua'))()
 

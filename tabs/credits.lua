@@ -1,7 +1,4 @@
-local CreditsTab = mainWindow:AddTab("Credits")
-print(MiscTab)
-
-local CreditsLeftGroupbox = CreditsTab:AddLeftGroupbox("Credits")
+local CreditsLeftGroupbox = creditsTab:AddLeftGroupbox("Credits")
 
 CreditsLeftGroupbox:AddDivider()
 
