@@ -39,7 +39,6 @@ local currentGame
 for i,v in pairs(supportedGames) do
     if game.GameId ~= v then
         if game.GameId == 1709832923 then
-            print("test")
             currentGame = "zombie_uprising"
 
             break
