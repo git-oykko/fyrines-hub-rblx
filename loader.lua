@@ -22,11 +22,6 @@ local supportedGames = {
     wtrb = 2897155393
 }
 
-local matchesLeft = len(supportedGames)
-local currentGame
-
--- Functions
-
 function len(t)
     local count = 0
 
@@ -36,6 +31,9 @@ function len(t)
 
     return count
 end
+
+local matchesLeft = len(supportedGames)
+local currentGame
 
 -- Checks if the game is supported
 for i,v in pairs(supportedGames) do
