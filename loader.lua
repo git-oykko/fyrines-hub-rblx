@@ -74,6 +74,6 @@ Library:Notify("press right control to open the menu", 2)
 loadstring(game:HttpGet(games..currentGame..".lua"))()
 
 -- loads other tabs
-loadstring(game:HttpGet(tabs.."credits.lua"))()
-loadstring(game:HttpGet(tabs.."misc.lua"))()
-loadstring(game:HttpGet(tabs.."settings.lua"))
+loadstring(game:HttpGet(Tabs.."credits.lua"))()
+loadstring(game:HttpGet(Tabs.."misc.lua"))()
+loadstring(game:HttpGet(Tabs.."settings.lua"))
