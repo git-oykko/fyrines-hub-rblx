@@ -1,6 +1,6 @@
 local Tab = gameTab
 
-local AimCheats = Tab.Game:AddLeftGroupbox("Aim")
+local AimCheats = Tab:AddLeftGroupbox("Aim")
 
 AimCheats:AddDivider()
 
