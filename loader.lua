@@ -42,6 +42,10 @@ for i,v in pairs(supportedGames) do
             currentGame = "zombie_uprising"
 
             break
+        elseif game.PlaceId == v then
+            currentGame = i
+            
+            break
         else
             matchesLeft = matchesLeft - 1
         end
