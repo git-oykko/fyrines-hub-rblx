@@ -113,7 +113,7 @@ ESPCheats:AddToggle("ZombieESP", {
     end
 })
 
-local PerkMachines = game.Workspace.Map.PerkMachines
+local PerkMachines = game.Workspace:WaitForChild("Map"):WaitForChild("PerkMachines")
 
 ESPCheats:AddToggle("PerkESP", {
     Text = "Perk Machine ESP",
