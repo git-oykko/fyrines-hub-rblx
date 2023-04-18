@@ -65,7 +65,7 @@ Tabs = {
 gameTab = Tabs.game
 
 miscTab = Tabs.Misc
-creditsTab = Tabs.Misc
+creditsTab = Tabs.Credits
 
 Library:Notify("welcome to the hub, "..game.Players.LocalPlayer.DisplayName.." (@"..game.Players.LocalPlayer.Name..")", 2)
 Library:Notify("press right control to open the menu", 2)
@@ -76,4 +76,4 @@ loadstring(game:HttpGet(games..currentGame..".lua"))()
 -- loads other tabs
 loadstring(game:HttpGet(tab.."credits.lua"))()
 loadstring(game:HttpGet(tab.."misc.lua"))()
-loadstring(game:HttpGet(tab.."settings.lua"))
+loadstring(game:HttpGet(tab.."settings.lua"))()
