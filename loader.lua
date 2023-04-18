@@ -62,10 +62,10 @@ Tabs = {
     ['UI Settings'] = mainWindow:AddTab('UI Settings')
 }
 
-gameTab = tabs.game
+gameTab = Tabs.game
 
-miscTab = tabs.Misc
-creditsTab = tabs.Misc
+miscTab = Tabs.Misc
+creditsTab = Tabs.Misc
 
 Library:Notify("welcome to the hub, "..game.Players.LocalPlayer.DisplayName.." (@"..game.Players.LocalPlayer.Name..")", 2)
 Library:Notify("press right control to open the menu", 2)
