@@ -56,7 +56,7 @@ AimCheats:AddDropdown("AimPart", {
         "RightHand",
         "LeftHand",
         "RightLeg",
-        "LeftFoot"
+        "LeftLeg"
     },
 
     Default = 1,
